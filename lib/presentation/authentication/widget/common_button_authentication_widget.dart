@@ -1,0 +1,6 @@
+/*
+
+common widget used in login register or forgot password
+
+
+*/
