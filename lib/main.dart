@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: (context, child) {
         final mediaQueryData = MediaQuery.of(context);
+
         final scale = mediaQueryData.copyWith(textScaleFactor: 1.0);
 
         child = FToastBuilder()(context, child);
