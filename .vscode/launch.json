@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Current Device",
+            "request": "launch",
+            "type": "dart",
+            // "flutterMode": "release"
+        },
+        {
+            "name": "Android",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "330022461cb9c37d"
+        },
+        {
+            "name": "Android Release",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "330022461cb9c37d",
+        },
+        {
+            "name": "Redmi",
+            "request": "launch",
+            "type": "dart",
+            // "flutterMode": "release",
+            "deviceId": "49642e19"
+        },
+        {
+            "name": "iPhone",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "00008101-001C2DCA3E20001E",
+        }
+    ],
+    "compounds": [
+        {
+            "name": "All Devices",
+            "configurations": [
+                "Android",
+                "iPhone",
+                "Redmi",
+                // "Current Device",
+            ]
+        }
+    ]
+}

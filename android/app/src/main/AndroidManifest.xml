@@ -1,6 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sahil.selfmade.getx_folder_structure">
-   <application
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
         android:label="getx_folder_structure"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
-class ColorConstant {
-  static ColorConstant? _instance;
+class AppColorConstant {
+  static AppColorConstant? _instance;
   // Avoid self instance
-  ColorConstant._();
-  static ColorConstant get instance {
-    _instance ??= ColorConstant._();
+  AppColorConstant._();
+  static AppColorConstant get instance {
+    _instance ??= AppColorConstant._();
     return _instance!;
   }
 
   static Color black = Colors.black;
 
   static Color white = Colors.white;
+
+  static Color blue = Colors.blue;
 
   static Color gray40066 = fromHex('#66c2c1c0');
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:getx_folder_structure/core/utils/size_utils.dart';
 
 class AppBorderRadius {
   static AppBorderRadius? _instance;
@@ -10,35 +9,25 @@ class AppBorderRadius {
     return _instance!;
   }
 
-  static BorderRadius customBorderTL20 = BorderRadius.only(
+  static BorderRadius customBorderTL20 = const BorderRadius.only(
     topLeft: Radius.circular(
-      getHorizontalSize(
-        20.00,
-      ),
+      20,
     ),
     topRight: Radius.circular(
-      getHorizontalSize(
-        20.00,
-      ),
+      20,
     ),
   );
 
   static BorderRadius circleBorder3 = BorderRadius.circular(
-    getHorizontalSize(
-      3.00,
-    ),
+    3,
   );
 
-  static BorderRadius customBorderTL30 = BorderRadius.only(
+  static BorderRadius customBorderTL30 = const BorderRadius.only(
     topLeft: Radius.circular(
-      getHorizontalSize(
-        30.00,
-      ),
+      30,
     ),
     topRight: Radius.circular(
-      getHorizontalSize(
-        30.00,
-      ),
+      30,
     ),
   );
 }

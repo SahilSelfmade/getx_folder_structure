@@ -1,8 +1,7 @@
 import 'package:getx_folder_structure/core/core.dart';
 
-// ignore_for_file: must_be_immutable
-class Splash extends StatelessWidget {
-  const Splash({super.key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +9,13 @@ class Splash extends StatelessWidget {
       top: false,
       bottom: false,
       child: Scaffold(
-        backgroundColor: ColorConstant.black,
+        backgroundColor: AppColorConstant.black,
         body: Stack(
           children: [
             Container(
-              color: ColorConstant.black,
-              width: size.width,
-              height: size.height,
+              color: AppColorConstant.black,
+              width: Get.width,
+              height: Get.height,
             ),
             // Center(
             //   child: AppbarImage(

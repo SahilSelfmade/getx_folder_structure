@@ -26,13 +26,13 @@ class AppValidationFunctions {
     return isInputStringValid;
   }
 
-  /// Password should have,
-  /// at least a upper case letter
-  ///  at least a lower case letter
-  ///  at least a digit
-  ///  at least a special character [@#$%^&+=]
-  ///  length of at least 4
-  /// no white space allowed
+/* Password should have,
+at least a upper case letter
+ at least a lower case letter
+ at least a digit
+ at least a special character [@#$%^&+=]
+ length of at least 4
+no white space allowed */
   bool isValidPassword(String? inputString, {bool isRequired = false}) {
     bool isInputStringValid = false;
 

@@ -1,7 +1,7 @@
 import 'package:getx_folder_structure/core/core.dart';
 
-class SplashController extends GetxController {
-  final GetStorageController _userSessionController = Get.find();
+class SplashScreenController extends GetxController {
+  final GetStorageController _localStorage = Get.find();
 
   @override
   void onReady() {

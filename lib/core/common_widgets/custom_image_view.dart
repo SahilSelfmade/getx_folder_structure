@@ -8,31 +8,32 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomImageView extends StatelessWidget {
   ///[url] is required parameter for fetching network image
-  String? url;
+  final String? url;
 
   ///[imagePath] is required parameter for showing png,jpg,etc image
-  String? imagePath;
+  final String? imagePath;
 
   ///[svgPath] is required parameter for showing svg image
-  String? svgPath;
+  final String? svgPath;
 
   ///[file] is required parameter for fetching image file
-  File? file;
+  final File? file;
 
-  double? height;
-  double? width;
-  Color? color;
-  BoxFit? fit;
+  final double? height;
+  final double? width;
+  final Color? color;
+  final BoxFit? fit;
   final String placeHolder;
-  Alignment? alignment;
-  VoidCallback? onTap;
-  EdgeInsetsGeometry? margin;
-  BorderRadius? radius;
-  BoxBorder? border;
+  final Alignment? alignment;
+  final VoidCallback? onTap;
+  final EdgeInsetsGeometry? margin;
+  final BorderRadius? radius;
+  final BoxBorder? border;
 
   ///a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
-  CustomImageView({
+  const CustomImageView({
+    super.key,
     this.url,
     this.imagePath,
     this.svgPath,
@@ -98,7 +99,7 @@ class CustomImageView extends StatelessWidget {
 
   Widget _buildImageView() {
     if (svgPath != null && svgPath!.isNotEmpty) {
-      return Container(
+      return SizedBox(
         height: height,
         width: width,
         child: SvgPicture.asset(
@@ -124,7 +125,7 @@ class CustomImageView extends StatelessWidget {
         fit: fit,
         imageUrl: url!,
         color: color,
-        placeholder: (context, url) => Container(
+        placeholder: (context, url) => SizedBox(
           height: 30,
           width: 30,
           child: LinearProgressIndicator(
@@ -148,6 +149,6 @@ class CustomImageView extends StatelessWidget {
         color: color,
       );
     }
-    return SizedBox();
+    return const SizedBox();
   }
 }

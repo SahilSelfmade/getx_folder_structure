@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:getx_folder_structure/core/constants/color_constant.dart';
-import 'package:getx_folder_structure/core/utils/size_utils.dart';
 
 class AppBoxDecoration {
   static AppBoxDecoration? _instance;
@@ -12,12 +11,10 @@ class AppBoxDecoration {
   }
 
   static BoxDecoration get outlineYellow90033 => BoxDecoration(
-        color: ColorConstant.black,
+        color: AppColorConstant.black,
         border: Border.all(
-          color: ColorConstant.black,
-          width: getHorizontalSize(
-            2.00,
-          ),
+          color: AppColorConstant.black,
+          width: 2,
         ),
       );
 }

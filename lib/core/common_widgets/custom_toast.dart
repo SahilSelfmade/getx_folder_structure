@@ -3,14 +3,17 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomToast {
   static showToast(
-      {required String mesage, Color? bg_color, Color? txt_color}) {
+    final String mesage, {
+    final Color? bgColor,
+    final Color? textColor,
+  }) {
     return Fluttertoast.showToast(
-        msg: mesage,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: bg_color ?? Colors.black,
-        textColor: txt_color ?? Colors.white,
-        fontSize: 16.0);
+      msg: mesage,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.TOP,
+      backgroundColor: bgColor ?? Colors.black,
+      textColor: textColor ?? Colors.white,
+      fontSize: 16.0,
+    );
   }
 }
