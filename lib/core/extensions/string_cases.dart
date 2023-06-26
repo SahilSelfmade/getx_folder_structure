@@ -1,4 +1,5 @@
 extension StringCasesExtesnsion on String {
+  // ! First letter always capital
   String titleCase() {
     if (isEmpty) {
       return this;
@@ -6,6 +7,7 @@ extension StringCasesExtesnsion on String {
     return this[0].toUpperCase() + substring(1).toLowerCase();
   }
 
+// ! Capital Every First Letter of String
   String capitalizeFirstLetter() {
     if (isEmpty) {
       return this;
