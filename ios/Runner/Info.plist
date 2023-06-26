@@ -35,10 +35,10 @@
 	<!-- <key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string> -->
 		<!-- <string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string> -->
-	</array> -->
+	<!-- </array> -->
 
 	<!-- Google Login IOS -->
 	<!-- <key>CFBundleURLTypes</key>
