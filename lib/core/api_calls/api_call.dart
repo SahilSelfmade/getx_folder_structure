@@ -4,12 +4,12 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:getx_folder_structure/core/core.dart';
 
-class ApiCall {
-  static ApiCall? _instance;
+class AppApiCall {
+  static AppApiCall? _instance;
   // Avoid self instance
-  ApiCall._();
-  static ApiCall get instance {
-    _instance ??= ApiCall._();
+  AppApiCall._();
+  static AppApiCall get instance {
+    _instance ??= AppApiCall._();
 
     return _instance!;
   }
@@ -22,6 +22,8 @@ class ApiCall {
     data,
     queryParameters,
   }) async {
+    log('AppApiCall Get Method');
+
     var headers = token != null
         ? {
             'Content-Type': 'application/json',
@@ -31,12 +33,7 @@ class ApiCall {
             'Content-Type': 'application/json',
             'Authorization': '',
           };
-    // dio.interceptors.add(
-    //   AwesomeDioInterceptor(
-    //     logRequestTimeout: false,
-    //     logResponseHeaders: false,
-    //   ),
-    // );
+
     try {
       log('\nRequest Body:\n\nendPoint: $endPoint\n\ntoken: $token\n\nqueryParameters: $queryParameters\n\ndata: $data\n\nheaders: $headers\n\n\n');
 
@@ -53,8 +50,8 @@ class ApiCall {
         return response.data;
       }
     } on DioException catch (e) {
-      log('ApiCall Get Method <===>> ${e.message}');
-      log("ApiCall Get Method <===>> ${e.response?.data['message']}");
+      log('AppApiCall Get Method <===>> ${e.message}');
+      log("AppApiCall Get Method <===>> ${e.response?.data['message']}");
 
       CustomToast.showToast(e.response?.data['message']);
     }
@@ -66,6 +63,8 @@ class ApiCall {
     data,
     queryParameters,
   }) async {
+    log('AppApiCall Delete Method');
+
     var headers = token != null
         ? {
             'Content-Type': 'application/json',
@@ -75,12 +74,6 @@ class ApiCall {
             'Content-Type': 'application/json',
             'Authorization': '',
           };
-    // dio.interceptors.add(
-    //   AwesomeDioInterceptor(
-    //     logRequestTimeout: false,
-    //     logResponseHeaders: false,
-    //   ),
-    // );
     try {
       log('\nRequest Body:\n\nendPoint: $endPoint\n\ntoken: $token\n\nqueryParameters: $queryParameters\n\ndata: $data\n\nheaders: $headers\n\n\n');
 
@@ -97,8 +90,8 @@ class ApiCall {
         return response.data;
       }
     } on DioException catch (e) {
-      log('ApiCall Post Method <===>> ${e.message}');
-      log("ApiCall Post Method <===>> ${e.response?.data['message']}");
+      log('AppApiCall Delete Method <===>> ${e.message}');
+      log("AppApiCall Delete Method <===>> ${e.response?.data['message']}");
 
       CustomToast.showToast(e.response?.data['message']);
     }
@@ -111,6 +104,8 @@ class ApiCall {
     required data,
     queryParameters,
   }) async {
+    log('AppApiCall Post Form Data Method');
+
     var headers = token != null
         ? {
             'Accept': 'application/json',
@@ -121,12 +116,6 @@ class ApiCall {
             'Accept': 'application/json',
             'Authorization': '',
           };
-    // dio.interceptors.add(
-    //   AwesomeDioInterceptor(
-    //     logRequestTimeout: false,
-    //     logResponseHeaders: false,
-    //   ),
-    // );
 
     log('\nRequest Body:\n\nendPoint: $endPoint\n\ntoken: $token\n\nqueryParameters: $queryParameters\n\ndata: ${data.fields}\n\nheaders: $headers\n\n\n');
     try {
@@ -147,8 +136,8 @@ class ApiCall {
         return response.data;
       }
     } on DioException catch (e) {
-      log('ApiCall Post Method <===>> ${e.message}');
-      log("ApiCall Post Method <===>> ${e.response?.data['message']}");
+      log('AppApiCall Post Form Data Method <===>> ${e.message}');
+      log("AppApiCall Post Form Data Method <===>> ${e.response?.data['message']}");
       CustomToast.showToast(e.response?.data['message']);
     }
   }
@@ -159,6 +148,8 @@ class ApiCall {
     data,
     queryParameters,
   }) async {
+    log('AppApiCall Put Form Data Method');
+
     var headers = token != null
         ? {
             'Accept': 'application/json',
@@ -169,12 +160,6 @@ class ApiCall {
             'Accept': 'application/json',
             'Authorization': '',
           };
-    // dio.interceptors.add(
-    //   AwesomeDioInterceptor(
-    //     logRequestTimeout: false,
-    //     logResponseHeaders: false,
-    //   ),
-    // );
 
     try {
       log('\nRequest Body:\n\nendPoint: $endPoint\n\ntoken: $token\n\nqueryParameters: $queryParameters\n\ndata: $data\n\nheaders: $headers\n\n\n');
@@ -196,8 +181,8 @@ class ApiCall {
         return response.data;
       }
     } on DioException catch (e) {
-      log('ApiCall Post Method <===>> ${e.message}');
-      log("ApiCall Post Method <===>> ${e.response?.data['message']}");
+      log('AppApiCall Put Form Data Method <===>> ${e.message}');
+      log("AppApiCall Put Form Data Method <===>> ${e.response?.data['message']}");
       CustomToast.showToast(e.response?.data['message']);
     }
   }
@@ -208,6 +193,8 @@ class ApiCall {
     queryParameters,
     data,
   }) async {
+    log('AppApiCall Post Method');
+
     var headers = token != null
         ? {
             'Content-Type': 'application/json',
@@ -221,12 +208,7 @@ class ApiCall {
 
     try {
       log('\nRequest Body:\n\nendPoint: $endPoint\n\ntoken: $token\n\nqueryParameters: $queryParameters\n\ndata: $data\n\nheaders: $headers\n\n\n');
-      // dio.interceptors.add(
-      //   AwesomeDioInterceptor(
-      //     logRequestTimeout: false,
-      //     logResponseHeaders: false,
-      //   ),
-      // );
+
       var response = await dio.post(
         endPoint,
         data: data,
@@ -235,8 +217,6 @@ class ApiCall {
           headers: headers,
           receiveDataWhenStatusError: false,
         ),
-
-        // receiveDataWhenStatusError: true,
       );
 
       if (response.statusCode == 200) {
@@ -245,10 +225,7 @@ class ApiCall {
         return response.data;
       }
     } on DioException catch (e) {
-      log('ApiCall Post Method <===>> ${e.message}');
-      // log("ApiCall Post Method <===>> ${e.response?.data['message']}");
-      // Get.defaultDialog(title: "Error", middleText: e.response?.data['message'], backgroundColor: Colors.grey);
-      // CustomToast.showToast(e.response?.data['message']);
+      log('AppApiCall Post Method <===>> ${e.message}');
     }
   }
 }

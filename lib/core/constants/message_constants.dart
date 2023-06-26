@@ -13,6 +13,8 @@ class AppMessageConstants {
 
   // ! Validations
   static const passwordValidationMessage = 'msg_password_validation';
+  static const confrimPasswordValidationMessage = 'msg_confirm_password_validation';
+  static const emailValidationMessage = 'msg_email_validation';
 
   // ! PopUps
 }
