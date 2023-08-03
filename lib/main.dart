@@ -10,7 +10,7 @@ void main() async {
   var localStorage = Get.put(GetStorageController());
   await localStorage.init();
   // ! Logger
-  Logger.init(LogMode.debug);
+
   runApp(const MyApp());
 }
 

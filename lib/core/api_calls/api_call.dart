@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -45,7 +44,8 @@ class AppApiCall {
       );
 
       if (response.statusCode == 200) {
-        log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        // log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        Logger.printApiCalls(response.data);
         log('\n================================================================\n================================================================\nAPI CALL END\n');
         return response.data;
       }
@@ -85,7 +85,8 @@ class AppApiCall {
       );
 
       if (response.statusCode == 200) {
-        log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        // log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        Logger.printApiCalls(response.data);
         log('\n================================================================\n================================================================\nAPI CALL END\n');
         return response.data;
       }
@@ -131,7 +132,8 @@ class AppApiCall {
       );
 
       if (response.statusCode == 200) {
-        log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        // log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        Logger.printApiCalls(response.data);
         log('\n================================================================\n================================================================\nAPI CALL END\n');
         return response.data;
       }
@@ -176,7 +178,8 @@ class AppApiCall {
       );
 
       if (response.statusCode == 200) {
-        log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        // log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        Logger.printApiCalls(response.data);
         log('\n================================================================\n================================================================\nAPI CALL END\n');
         return response.data;
       }
@@ -220,7 +223,8 @@ class AppApiCall {
       );
 
       if (response.statusCode == 200) {
-        log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        // log('\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(response.data)}\n\n\n\n');
+        Logger.printApiCalls(response.data);
         log('\n================================================================\n================================================================\nAPI CALL END\n');
         return response.data;
       }

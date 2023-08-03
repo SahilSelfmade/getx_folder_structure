@@ -1,15 +1,18 @@
-class Logger {
-  static LogMode _logMode = LogMode.debug;
+import 'dart:convert';
+import 'dart:developer';
 
-  static void init(LogMode mode) {
-    Logger._logMode = mode;
+class Logger {
+  var logEnabled = true;
+  static void print(
+    dynamic title,
+    dynamic data,
+  ) {
+    log('\n====================\nLog Start\nTitle: $title\n\nResult: $data\nLog End\n====================\n');
   }
 
-  static void log(dynamic data, {StackTrace? stackTrace}) {
-    if (_logMode == LogMode.debug) {
-      log('Error: $data\n$stackTrace\n==========');
-    }
+  static void printApiCalls(
+    dynamic data,
+  ) {
+    log('\n=================\nRequest Body:\n\n${const JsonEncoder.withIndent('  ').convert(data)}\n\n=================\n\n');
   }
 }
-
-enum LogMode { debug, live }

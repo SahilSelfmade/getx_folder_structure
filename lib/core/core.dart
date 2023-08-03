@@ -9,7 +9,6 @@ export 'common_widgets/custom_text_form_field.dart';
 export 'common_widgets/custom_toast.dart';
 export 'constants/api_constant.dart';
 export 'constants/color_constant.dart';
-export 'constants/image_constant.dart';
 export 'constants/local_storage_constants.dart';
 export 'constants/message_constants.dart';
 export 'extensions/date_time_convertor.dart';
